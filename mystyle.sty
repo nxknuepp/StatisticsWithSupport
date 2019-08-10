@@ -1,0 +1,87 @@
+%%Path 28, 34 Activity Packet, Fall 2016
+%\documentclass[letterpaper,english]{book}
+\ProvidesPackage{mystyle}
+%\usepackage[T1]{fontenc}
+%\usepackage[utf8]{fontenc}
+%\usepackage[latin9]{inputenc}
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{3}
+\usepackage[letterpaper]{geometry}
+\geometry{verbose,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in}
+\setlength{\parskip}{\smallskipamount}
+\setlength{\parindent}{0pt}
+\usepackage{pdfpages}
+\usepackage{bookmark}
+\makeatletter
+\usepackage{remreset}
+
+%\makeatletter
+\makeatletter \@removefromreset{section} {chapter} \makeatletter
+%\inspdf  insert a pdf into the document, starting a new section 
+%  use: \inspdf{section name,magnification factor, e.g. .8,path to file w/o .pdf suffix}
+%\newcommand{\inspdfsection}[3]{\includepdf[pages=1,pagecommand=\section{#1},scale=#2]{#3}  
+%  \includepdf[pages=2-,pagecommand={},scale=#2]{#3}}
+
+\newcommand{\inspdfsection}[3]{\section{#1}
+    \raisebox{-\height}[0pt][0pt]{\makebox[\textwidth]{
+    \includegraphics[scale=#2,page=1,trim= 0 0 0 1in,clip]{#3}}}
+    \includepdf[pages=2-,scale=#2,pagecommand={}]{#3}
+    \cleardoublepage}
+
+\newcommand{\inspdflastsection}[3]{\section{#1}
+    \raisebox{-\height}[0pt][0pt]{\makebox[\textwidth]{
+    \includegraphics[scale=#2,page=1,trim= 0 0 0 1in,clip]{#3}}}
+    \includepdf[pages=2-,scale=#2,pagecommand={}]{#3}}
+%    \cleardoublepage} No blank page for the last section of the book
+
+\newcommand{\inspdfsubsection}[3]{\subsection{#1}
+    \raisebox{-\height}[0pt][0pt]{\makebox[\textwidth]{
+    \includegraphics[scale=#2, page=1,trim= 0 0 0 1in,clip]{#3}}}
+    \includepdf[pages=2-,scale=#2,pagecommand={}]{#3}
+    \cleardoublepage}
+
+%\newcommand{\inspdfsubsection}[3]{\cleardoublepage\includepdf[pages=1,pagecommand=\subsection{#1},scale=#2]{#3}  
+%  \includepdf[pages=2-,pagecommand={},scale=#2]{#3}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+\special{papersize=\the\paperwidth,\the\paperheight}
+
+%% A simple dot to overcome graphicx limitations
+\newcommand{\lyxdot}{.}
+\usepackage[english]{babel}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+\setcounter{section}{0}
+\usepackage{charter}
+\usepackage{graphicx}
+\usepackage{float}
+\addto\captionsenglish{\renewcommand{\chaptername}{UNIT}}
+
+\makeatother
+
+\makeatletter
+\renewcommand{\l@section}{\@dottedtocline{1}{1.5em}{6em}}
+\renewcommand{\l@subsection}{\@dottedtocline{2}{3.8em}{6em}}
+\makeatother
+
+\renewcommand{\thesection}{Module\ \arabic{section}}
+\usepackage{caption}  % removes the Figure # from figures when used with \caption*{blah}
+
+\newcommand{\inspicture}[2]{\begin{figure}[h!]
+  \centerline{\includegraphics[width=3in]{#2}}
+  \caption*{#1}
+\end{figure}}
+\usepackage{fancyhdr}
+\setlength{\headheight}{15.2pt}
+\pagestyle{fancy}
+%\fancyhead[LE]{\textsl{UNIT \thechapter}}
+\fancyhead[LE]{\slshape\leftmark}
+\fancyhead[RE]{}
+%\fancyhead[RO]{\textsl{\thesection}}
+\fancyhead[RO]{\slshape\rightmark}
+\fancyhead[LO]{}
+%\renewcommand{\inspicture}[2]{\relax}
+%\includeonly{./tex/Unit2}
+%\includeonly{./tex/Unit2,./tex/Unit3,./tex/Unit4,./tex/Unit5}
+%\includeonly{./tex/Unit8}
