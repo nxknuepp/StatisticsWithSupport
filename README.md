@@ -1,6 +1,6 @@
-# Statistics Packet
+# Statistics Packet for Statistics with Support
 
-This repository contains the files necessary to generate the Math 110 Packet, Fall 2019, from Los Medanos College.
+This repository contains the files necessary to generate the Math 110 + 110S Packet, Fall 2019, from Los Medanos College.
 
 The sections in the packet have been written in both Word and Latex, with the packet itself generated with the Latex typesetting engine XeLatex. To make this possible, the original Word files have been converted to pdfs, and imported into Latex using the Latex package **pdfpages**. The packet contained in this repository was generated on a MacBook Air, using TexShop with MacTex as the underlying typesetting engine.
 
