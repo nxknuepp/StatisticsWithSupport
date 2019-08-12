@@ -8,7 +8,7 @@ After downloading this repository you can generate the package itself using a co
 
 ## The Files
 
-* Math110Packet.tex	This is the main Latex file that you typeset. It assembles all the remaining files to produce the packet. **Note**: To ensure that the table of contents is populated you must run the typesetting engine at least two times. Running it *four times* guarantees all the cross references populate.
+* Math110110SPacket.tex	This is the main Latex file that you typeset. It assembles all the remaining files to produce the packet. **Note**: To ensure that the table of contents is populated you must run the typesetting engine at least two times. Running it *four times* guarantees all the cross references populate.
 * mystyle.sty    This file contains the Latex macros for correct formatting of the table of contents, as well as those for wrapping the pdf files into Latex.
 * img     This directory contains two images that are imported into two Latex sections of the packet.
 * tex     This directory contains the Latex sections of the packet. Most of these assemble the pdf versions of the Word files.
@@ -28,7 +28,7 @@ Because Cambria is not readily available on Linux, you should replace the Cambri
 2. Install your Latex typesetting engine. Recommended: TexLive distribution.
 3. If you want to use a typesetting editor to generate the package, download one. Recommended: TexMaker. Otherwise, it's fine to generate the packet from the command line.
 4. Generate the packet itself, remembering to run the typesetting engine at least *two* times (four times to be sure). **Note** Because of the font choice, be sure to set the typesetting engine to use XeLatex. If you are using the command line, the command is
-    xelatex Math110Packet.tex
+    xelatex Math110110SPacket.tex
 
 ### Windows
 
